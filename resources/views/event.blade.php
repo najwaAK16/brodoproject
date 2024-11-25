@@ -54,7 +54,7 @@
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
                     <h3 class="mb-3">Bro Do Fest 2.0</h3>
                     <p style="text-align: justify;">
-                        Bro Do Fest 2.0 mengusung tema <span class="biru2">"Antra: Mayanidra Prakasha"</span> dan memiliki tagline 
+                        Bro Do Fest 22.0 mengusung tema <span class="biru2">"Antra: Mayanidra Prakasha"</span> dan memiliki tagline 
                         <span class="biru2">"Shinning Beyond Imagination"</span> yang maknanya adalah kami kembali bersinar sebagai event 
                         <span class="biru2">Bro Do Fest 2.0</span> yang melampaui imajinasi.
                     </p>
