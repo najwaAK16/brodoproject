@@ -47,4 +47,8 @@
             </div>
     </section>
 </div>
+<footer class="footer2 text-white text-center py-3">
+    <p>&copy; 2024 Bro Do Fest</p>
+</footer>
+
 @endsection

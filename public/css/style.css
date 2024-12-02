@@ -1,6 +1,9 @@
 .nav-item{
-    font-size: 16px;
+    font-size: 17px;
     font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.1), 0 0 1px rgba(255, 255, 255, 0.1), 0 0 50px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 body {
@@ -40,12 +43,12 @@ body {
 
 /* Navbar dengan background gelap saat scrolling */
 .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.9) !important; /* Hitam solid */
+    background-color: #969D5F !important; /* Hitam solid */
 }
 
 .nav-link.active-section {
     color: #ffffff !important; /* Warna putih */
-    font-weight: 500; /* Opsional: membuat tulisan lebih tebal */
+    font-weight: 700; /* Opsional: membuat tulisan lebih tebal */
 }
 
 
@@ -90,7 +93,11 @@ body {
 }
 
 .footer{
-    background-color:#181818 ;
+    background-color:#3a3f1a ;
+}
+
+.footer2{
+    background-color:#21211e ;
 }
 
 .biru{
@@ -101,6 +108,16 @@ body {
     color: #79AAD3;
     font-weight: 800;
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.1), 0 0 1px rgba(255, 255, 255, 0.1), 0 0 50px rgba(255, 255, 255, 0.3), 0 0 100px rgba(255, 255, 255, 0.5);
+}
+
+.kuning{
+    color: #F6DDA4;
+    font-weight: 700;
+}
+
+.putih {
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .italic-text {

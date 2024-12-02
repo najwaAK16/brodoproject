@@ -33,65 +33,108 @@
 
 <div class="container-fluid p-0">
     <!-- Hero Section -->
-    <div class="hero text-center text-white d-flex align-items-center" 
-         style="background-image: url('{{ asset('images/bghutan.png') }}'); height: 470px; background-size: cover;">
-        <div style="padding-top: 60px">
+    <div class="hero-wrapper" 
+     style="background-image: url('{{ asset('images/bghutanfull.png') }}'); background-size: cover; background-repeat: no-repeat; background-position: top;">
+
+    <!-- Hero Section -->
+    <div id="home" class="hero section text-center text-white d-flex align-items-center" style="height: 470px;">
+        <div style="padding-top: 180px">
             <h1 class="BRO" style="font-style: italic; text-shadow: 0 0 1px rgba(255, 255, 255, 0.1), 0 0 1px rgba(255, 255, 255, 0.1), 0 0 50px rgba(255, 255, 255, 0.3), 0 0 100px rgba(255, 255, 255, 0.5);">
                 Bro Do Fest 2.0
             </h1>
             <h2 class="text-uppercase" style="font-weight: bold;">ANTRA: <br> MAYANIDRA PRAKASHA</h2>
             <p class="shine mt-3">Shinning Beyond Imagination</p>
         </div>
+        <div style="position: absolute; top: 62%; left: 50%; transform: translate(-50%, -50%); z-index: 0; padding-top: 350px;">
+            <img src="{{ asset('images/elemen.png') }}" alt="Elemen">
+        </div>
     </div>
 
+
     <!-- Content Section -->
-    <section class="py-5">
+    <section class="section py-5" id="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <img src="{{ asset('images/foto-event.png') }}" class="img-fluid rounded" alt="Bro Do Fest 2.0">
+                <div class="col">
+                    <img src="{{ asset('images/foto2.png') }}" class="img-fluid rounded" alt="Bro Do Fest 2.0" style="padding-left: 45px; padding-top: 25px;">
                 </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <h3 class="mb-3">Bro Do Fest 2.0</h3>
-                    <p style="text-align: justify;">
-                        Bro Do Fest 22.0 mengusung tema <span class="biru2">"Antra: Mayanidra Prakasha"</span> dan memiliki tagline 
-                        <span class="biru2">"Shinning Beyond Imagination"</span> yang maknanya adalah kami kembali bersinar sebagai event 
-                        <span class="biru2">Bro Do Fest 2.0</span> yang melampaui imajinasi.
+                <div class="col d-flex flex-column justify-content-center">
+                    <h3 style="font-weight: 700; font-style: italic; padding-top:40px; padding-left:60px;">
+                        <span class="kuning">Bro</span>
+                        <span class="putih">Do</span>
+                        <span class="kuning">Fest</span>
+                        <span class="putih">2.0</span>
+                    </h3>
+                    <p style="text-align: justify; color:beige; padding-top:25px;">
+                        <span class="kuning">Bro</span>
+                        <span class="putih">Do</span>
+                        <span class="kuning">Fest</span>
+                        <span class="putih">2.0</span> 
+                        <span class="putih">"Antra:</span> 
+                        <span class="kuning">Mayanidra</span>
+                        <span class="putih">Prakasha"</span>  dan memiliki tagline 
+                        <span class="putih">"Shinning</span> 
+                        <span class="kuning">Beyond</span>
+                        <span class="putih">Imagination"</span>
+                        yang maknanya adalah kami kembali bersinar sebagai event 
+                        <span class="kuning">Bro</span>
+                        <span class="putih">Do</span>
+                        <span class="kuning">Fest</span>
+                        <span class="putih">2.0</span>
+                         yang melampaui imajinasi.
                     </p>
                 </div>
             </div>
         </div>
+        <div style="position: absolute; left: 50%; transform: translate(-50%, -50%); z-index: 0; padding-top: 170px;">
+            <img src="{{ asset('images/elemen.png') }}" alt="Elemen">
+        </div>
     </section>
+    
+    <div id="invitation" class="section" style="padding: 85px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-1 p-0">
+                    <img src="{{ asset('images/kupu.png') }}" >
+                </div>
+                <div class="col d-flex flex-column justify-content-center p-0">
+                    <h2 style="font-weight: 700; font-style: italic; padding-left:50px; padding-top:18px; color:#ffff; text-shadow: 0 0 1px rgba(255, 255, 255, 1), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.8), 0 0 100px rgba(255, 255, 255, 1);">
+                        Will be held on
+                    </h2>
+                    <p style="text-align: justify; padding-top:30px; font-size:23px;">
+                        <span class="putih">Date : </span>
+                        <span class="kuning">14 December 2024</span>
+                    </p>
+                    <p style="text-align: justify; font-size:23px;">
+                        <span class="putih">Time : </span>
+                        <span class="kuning">07.00 - 17.10</span>
+                    </p>
+                    <p style="text-align: justify; font-size:23px;">
+                        <span class="putih">Place : </span>
+                        <span class="kuning">Lapang 2 SMKN 1 Katapang</span>
+                    </p>
+                    
+                </div>
+                <div class="col-sm-1">
+                    <img src="{{ asset('images/kupu2.png') }}" style="padding-top:230px;">
+                </div>
+                <div class="col">
+                    <img src="{{ asset('images/peta.png') }}" class="img-fluid rounded" alt="Bro Do Fest 2.0" style="padding-left: 45px; padding-top: 45px;">
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; left: 50%; transform: translate(-50%, -50%); z-index: 0; padding-top: 85px;">
+            <img src="{{ asset('images/elemen.png') }}" alt="Elemen">
+        </div>
+    </div>
+    
+    <div id="film" class="section" style="padding: 85px 0;">
+        <div class="container">
+            <h2>Gallery</h2>
+            <p>Galeri foto dan video Bro Do Fest.</p>
+        </div>
+    </div>
 
-
-    <div id="home" class="section" style="padding-top: 70px;">
-        <div class="container">
-            <h1>Welcome to Bro Do Fest</h1>
-            <p>Creating unforgettable moments through film that leave a timeless impact.</p>
-        </div>
-    </div>
-    
-    <div id="about" class="section" style="padding: 100px 0;">
-        <div class="container">
-            <h2>About Bro Do Fest</h2>
-            <p>Informasi mengenai acara Bro Do Fest.</p>
-        </div>
-    </div>
-    
-    <div id="invitation" class="section" style="padding: 100px 0;">
-        <div class="container">
-            <h2>Invitation</h2>
-            <p>Detail undangan untuk acara Bro Do Fest.</p>
-        </div>
-    </div>
-    
-    <div id="film" class="section" style="padding: 100px 0;">
-        <div class="container">
-            <h2>Film</h2>
-            <p>Karya film yang akan ditampilkan dalam acara.</p>
-        </div>
-    </div>
-    
     <div id="filosofi" class="section" style="padding: 100px 0;">
         <div class="container">
             <h2>Filosofi</h2>
@@ -105,8 +148,11 @@
             <p>Galeri foto dan video Bro Do Fest.</p>
         </div>
     </div>
-    
+</div>    
 </div>
+<footer class="footer text-white text-center py-3">
+        <p>&copy; 2024 Bro Do Fest</p>
+    </footer>
 @endsection
 
 <script>
