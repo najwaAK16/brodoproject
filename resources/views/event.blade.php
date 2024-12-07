@@ -1,6 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- Modal Music -->
+<div class="modal fade" id="musicModal" tabindex="-1" aria-labelledby="musicModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="musicModalLabel">Play Music</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Do you want to play background music while browsing?</p>
+                <button id="playMusicButton" class="btn btn-outline-custom">Yes, Play Music</button>
+                <button id="closeMusicModal" class="btn btn-outline-custom" data-bs-dismiss="modal">No, Thanks</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Audio -->
+<audio id="backgroundMusic" loop>
+    <source src="{{ asset('audio/bgs.mp3') }}" type="audio/mpeg">
+</audio>
+
 <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: transparent; transition: background-color 0.3s;">
     <div class="container"> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,12 +35,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">ABOUT</a>
-                </li>
+                </li>                                                                       
                 <li class="nav-item">
                     <a class="nav-link" href="#invitation">INVITATION</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#film">FILM</a>
+                    <a class="nav-link" href="#film">MOVIE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#filosofi">FILOSOFI</a>
@@ -38,7 +60,7 @@
 
     <!-- Hero Section -->
     <div id="home" class="hero section text-center text-white d-flex align-items-center" style="height: 470px;">
-        <div style="padding-top: 180px">
+        <div style="padding-top: 180px; padding-left:13px;">
             <h1 class="BRO" style="font-style: italic; text-shadow: 0 0 1px rgba(255, 255, 255, 0.1), 0 0 1px rgba(255, 255, 255, 0.1), 0 0 50px rgba(255, 255, 255, 0.3), 0 0 100px rgba(255, 255, 255, 0.5);">
                 Bro Do Fest 2.0
             </h1>
@@ -56,16 +78,16 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <img src="{{ asset('images/foto2.png') }}" class="img-fluid rounded" alt="Bro Do Fest 2.0" style="padding-left: 45px; padding-top: 25px;">
+                    <img src="{{ asset('images/foto2.png') }}" class="img-fluid rounded" alt="Bro Do Fest 2.0" style="padding-left: 45px; padding-top: 25px; width:80%;">
                 </div>
                 <div class="col d-flex flex-column justify-content-center">
-                    <h3 style="font-weight: 700; font-style: italic; padding-top:40px; padding-left:60px;">
+                    <h3 style="font-weight: 700; font-style: italic; padding-top:40px;">
                         <span class="kuning">Bro</span>
                         <span class="putih">Do</span>
                         <span class="kuning">Fest</span>
                         <span class="putih">2.0</span>
                     </h3>
-                    <p style="text-align: justify; color:beige; padding-top:25px;">
+                    <p style="text-align: justify; color:beige; padding-top:23px; font-size:20px;">
                         <span class="kuning">Bro</span>
                         <span class="putih">Do</span>
                         <span class="kuning">Fest</span>
@@ -95,7 +117,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-1 p-0">
-                    <img src="{{ asset('images/kupu.png') }}" >
+                    <img src="{{ asset('images/kupu.png') }}" class="floating-effect" >
                 </div>
                 <div class="col d-flex flex-column justify-content-center p-0">
                     <h2 style="font-weight: 700; font-style: italic; padding-left:50px; padding-top:18px; color:#ffff; text-shadow: 0 0 1px rgba(255, 255, 255, 1), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.8), 0 0 100px rgba(255, 255, 255, 1);">
@@ -116,29 +138,116 @@
                     
                 </div>
                 <div class="col-sm-1">
-                    <img src="{{ asset('images/kupu2.png') }}" style="padding-top:230px;">
+                    <img src="{{ asset('images/kupu2.png') }}" style="padding-top:230px;" class="floating-effect2">
                 </div>
                 <div class="col">
                     <img src="{{ asset('images/peta.png') }}" class="img-fluid rounded" alt="Bro Do Fest 2.0" style="padding-left: 45px; padding-top: 45px;">
                 </div>
             </div>
         </div>
-        <div style="position: absolute; left: 50%; transform: translate(-50%, -50%); z-index: 0; padding-top: 85px;">
+        <div style="position: absolute; left: 50%; transform: translate(-50%, -50%); z-index: 0; padding-top: 140px;">
             <img src="{{ asset('images/elemen.png') }}" alt="Elemen">
         </div>
     </div>
     
-    <div id="film" class="section" style="padding: 85px 0;">
+    <div id="film" class="section" style="padding: 25px 0;">
         <div class="container">
-            <h2>Gallery</h2>
-            <p>Galeri foto dan video Bro Do Fest.</p>
+            <div class="header-film">
+                <h2 class="ourmovies" style="padding-bottom:20px; font-size:30px; font-style: italic; text-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.3), 0 0 50px rgba(255, 255, 255, 0.6), 0 0 100px rgba(255, 255, 255, 0.6);">
+                    Our Movies
+                </h2>
+            </div>
+            <div class="container-fluid">
+                <div class="position-relative">
+                    <button class="btn btn-dark position-absolute top-50 start-0 translate-middle-y" id="scrollLeft" style="z-index: 10;">❮</button>
+                    <div class="film-container d-flex overflow-x-scroll">
+                        <!-- Card Film -->
+                        <div class="card custom-card border-0 mx-2">
+                            <img src="{{ asset('images/cnth.jpg') }}" class="img-fluid mb-3">
+                            <div class="konten-film" style="padding: 20px; padding-top:10px;">
+                                <h4 class="judul-film fw-bold mb-3 kuning">Peramal Kode Buntut</h4>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Produser  : </span><span class="produser" style="color: #F6DDA4;">Ajeng Niramaya</span></p>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Sutradara : </span><span class="sutradara" style="color: #F6DDA4;">Stefanus Efendi</span></p>
+                                <p><span style="color: #ffff">Penulis naskah : </span><span class="penas" style="color: #F6DDA4;">Rasyid Faqih</span></p>
+                                <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    See More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card custom-card border-0 mx-2">
+                            <img src="{{ asset('images/cnth.jpg') }}" class="img-fluid mb-3">
+                            <div class="konten-film" style="padding: 20px; padding-top:10px;">
+                                <h4 class="judul-film fw-bold mb-3 kuning">Peramal Kode Buntut</h4>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Produser  : </span><span class="produser" style="color: #F6DDA4;">Ajeng Niramaya</span></p>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Sutradara : </span><span class="sutradara" style="color: #F6DDA4;">Stefanus Efendi</span></p>
+                                <p><span style="color: #ffff">Penulis naskah : </span><span class="penas" style="color: #F6DDA4;">Rasyid Faqih</span></p>
+                                <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    See More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card custom-card border-0 mx-2">
+                            <img src="{{ asset('images/cnth.jpg') }}" class="img-fluid mb-3">
+                            <div class="konten-film" style="padding: 20px; padding-top:10px;">
+                                <h4 class="judul-film fw-bold mb-3 kuning">Peramal Kode Buntut</h4>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Produser  : </span><span class="produser" style="color: #F6DDA4;">Ajeng Niramaya</span></p>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Sutradara : </span><span class="sutradara" style="color: #F6DDA4;">Stefanus Efendi</span></p>
+                                <p><span style="color: #ffff">Penulis naskah : </span><span class="penas" style="color: #F6DDA4;">Rasyid Faqih</span></p>
+                                <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    See More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card custom-card border-0 mx-2">
+                            <img src="{{ asset('images/cnth.jpg') }}" class="img-fluid mb-3">
+                            <div class="konten-film" style="padding: 20px; padding-top:10px;">
+                                <h4 class="judul-film fw-bold mb-3 kuning">Peramal Kode Buntut</h4>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Produser  : </span><span class="produser" style="color: #F6DDA4;">Ajeng Niramaya</span></p>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Sutradara : </span><span class="sutradara" style="color: #F6DDA4;">Stefanus Efendi</span></p>
+                                <p><span style="color: #ffff">Penulis naskah : </span><span class="penas" style="color: #F6DDA4;">Rasyid Faqih</span></p>
+                                <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    See More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card custom-card border-0 mx-2">
+                            <img src="{{ asset('images/cnth.jpg') }}" class="img-fluid mb-3">
+                            <div class="konten-film" style="padding: 20px; padding-top:10px;">
+                                <h4 class="judul-film fw-bold mb-3 kuning">Peramal Kode Buntut</h4>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Produser  : </span><span class="produser" style="color: #F6DDA4;">Ajeng Niramaya</span></p>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Sutradara : </span><span class="sutradara" style="color: #F6DDA4;">Stefanus Efendi</span></p>
+                                <p><span style="color: #ffff">Penulis naskah : </span><span class="penas" style="color: #F6DDA4;">Rasyid Faqih</span></p>
+                                <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    See More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card custom-card border-0 mx-2">
+                            <img src="{{ asset('images/cnth.jpg') }}" class="img-fluid mb-3">
+                            <div class="konten-film" style="padding: 20px; padding-top:10px;">
+                                <h4 class="judul-film fw-bold mb-3 kuning">Peramal Kode Buntut</h4>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Produser  : </span><span class="produser" style="color: #F6DDA4;">Ajeng Niramaya</span></p>
+                                <p style="margin-bottom: 5px"><span style="color: #ffff">Sutradara : </span><span class="sutradara" style="color: #F6DDA4;">Stefanus Efendi</span></p>
+                                <p><span style="color: #ffff">Penulis naskah : </span><span class="penas" style="color: #F6DDA4;">Rasyid Faqih</span></p>
+                                <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    See More <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y" id="scrollRight" style="z-index: 10;">❯</button>
+                </div>
+            </div>
         </div>
     </div>
+    
+    
 
     <div id="filosofi" class="section" style="padding: 100px 0;">
         <div class="container">
-            <h2>Filosofi</h2>
-            <p>Filosofi di balik Bro Do Fest.</p>
+            <div >
+                <h2>v</h2>
+            </div>
         </div>
     </div>
     
@@ -152,10 +261,79 @@
 </div>
 <footer class="footer text-white text-center py-3">
         <p>&copy; 2024 Bro Do Fest</p>
-    </footer>
+</footer>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Peramal Kode Buntut</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="{{ asset('images/cnth.jpg') }}" class="img-fluid mb-3" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
+            <div class="modal-isi">
+                <p style="margin:2px;"><span style="color: #ffff">Produser  : </span><span class="produser" style="color: #F6DDA4;">Ajeng Niramaya</span></p>
+                <p style="margin:2px;"><span style="color: #ffff">Sutradara : </span><span class="sutradara" style="color: #F6DDA4;">Stefanus Efendi</span></p>
+                <p style="margin:2px;"><span style="color: #ffff">Penulis naskah : </span><span class="penas" style="color: #F6DDA4;">Rasyid Faqih</span></p>
+                <p style="margin:2px;"><span style="color: #ffff">Pemeran : </span><span class="cast" style="color: #F6DDA4;">Rasyid Faqih, Ajeng Niramaya, Stefanus Efendi</span></p><br>
+                <p style="margin:2px;"><span style="color: #ffff">Sinopsis : </span><br>
+                    <span class="cast" style="color: #F6DDA4;">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </span></p>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-custom " data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 @endsection
 
 <script>
+    const container = document.querySelector('.film-container');
+const scrollLeft = document.getElementById('scrollLeft');
+const scrollRight = document.getElementById('scrollRight');
+
+// Ukuran setiap kartu
+const cardWidth = 300; // Sesuaikan dengan lebar card yang ditetapkan
+const scrollAmount = cardWidth * 1; // Geser satu kartu per klik
+
+scrollLeft.addEventListener('click', () => {
+    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
+
+scrollRight.addEventListener('click', () => {
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Inisialisasi modal saat halaman dimuat
+        const musicModal = new bootstrap.Modal(document.getElementById('musicModal'));
+        const audio = document.getElementById('backgroundMusic');
+        const playButton = document.getElementById('playMusicButton');
+
+        // Tampilkan modal saat halaman dibuka
+        musicModal.show();
+
+        // Tambahkan event listener ke tombol play music
+        playButton.addEventListener('click', function () {
+            audio.play();
+            musicModal.hide();
+        });
+
+        // Pastikan musik berhenti saat pengguna menutup modal tanpa memilih play
+        document.getElementById('closeMusicModal').addEventListener('click', function () {
+            if (!audio.paused) {
+                audio.pause();
+            }
+        });
+    });
     document.querySelectorAll('a.nav-link').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
